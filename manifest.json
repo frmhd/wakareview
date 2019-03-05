@@ -1,0 +1,32 @@
+{
+  "name": "wakareview",
+  "version": "0.0.1",
+  "description": "Wakatime review extension",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["src/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gitlab.homecred.it/hc-frontend/hc_market/merge_requests/*",
+        "https://github.com/*/pull/*"
+      ],
+      "js": ["src/index.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "src/penguin_16x16_prev.png"
+    },
+    "default_title": "Google Mail",
+    "default_popup": "src/popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "identity",
+    "storage",
+    "https://wakatime.com/"
+  ]
+}

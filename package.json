@@ -1,0 +1,12 @@
+{
+  "name": "wakareview",
+  "version": "0.0.1",
+  "devDependencies": {
+    "eslint": "^5.15.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
