@@ -24,13 +24,13 @@ chrome.browserAction.onClicked.addListener(authorization);
 const send = async (branchName, token) => {
   console.log('send', token);
   const dateInSeconds = () => (new Date() / 1000).toFixed();
-  const data = await fetch('https://wakatime.com/api/v1/users/current/heartbeats', {
+  await fetch('https://wakatime.com/api/v1/users/current/heartbeats', {
     method: 'POST',
     body: JSON.stringify({
       entity: `${branchName} code reviewing`,
       time: dateInSeconds(),
       branch: branchName,
-      project: 'hc_market',
+      project: 'hc-market',
       category: 'code reviewing',
     }),
     'Content-Type': 'application/json',
@@ -40,9 +40,9 @@ const send = async (branchName, token) => {
       'Access-Control-Allow-Origin': 'https://wakatime.com',
     },
   });
-  if (data.status === 401) {
-    authorization();
-  }
+  // if (data.status === 401) {
+  //   authorization();
+  // }
 };
 
 const onMessage = async (request, sender, sendResponse) => {

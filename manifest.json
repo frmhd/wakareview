@@ -20,8 +20,7 @@
     "default_icon": {
       "16": "src/penguin_16x16_prev.png"
     },
-    "default_title": "Google Mail",
-    "default_popup": "src/popup.html"
+    "default_title": "Google Mail"
   },
   "permissions": [
     "tabs",

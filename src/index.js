@@ -1,9 +1,10 @@
-const branchNameSplittedString = document
-  .querySelector('.label-branch.label-truncate.js-source-branch')
-  .textContent
-  .split('/');
+const branchNameElem = document.querySelector('.label-branch.label-truncate.js-source-branch');
 
-const branchName = branchNameSplittedString[branchNameSplittedString.length - 1];
-chrome.runtime.sendMessage({ branchName }, (response) => {
-  console.log(response);
-});
+if (branchNameElem) {
+  const branchNameSplittedString = branchNameElem.textContent.split('/');
+
+  const branchName = branchNameSplittedString[branchNameSplittedString.length - 1];
+  chrome.runtime.sendMessage({ branchName }, (response) => {
+    console.log(response);
+  });
+}
